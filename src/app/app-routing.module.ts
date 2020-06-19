@@ -1,8 +1,39 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminLayoutComponent } from './shared/components/layouts/admin-layout/admin-layout.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+
+  {
+    path: "",
+    redirectTo: '/admin',
+    pathMatch: 'full'
+  },
+
+  {
+    path: "",
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: "posts",
+        loadChildren: () =>
+          import("./views/posts/posts.module").then(m => m.PostsModule)
+      }
+    ]
+  },
+  {
+    path: 'admin',
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: "posts",
+        loadChildren: () => import('./views/posts/posts.module').then(m => m.PostsModule)
+      }
+    ]
+  },
+ 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
