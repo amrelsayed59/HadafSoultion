@@ -28,7 +28,7 @@
             <td>{{post.title}}</td>
             <td>{{ (post.body.length > 50) ? (post.body | slice:0:50) + '...' : post.body}}</td>
             <td style="width: 150px;">
-              <a href="javascript:;" class="btn btn-default text-primary">
+              <a href="javascript:;" class="btn btn-default text-primary" [routerLink]="['show', post.id]">
                 <i class="fa fa-eye"></i>
               </a>
               <a href="#" class="btn btn-default text-success">
