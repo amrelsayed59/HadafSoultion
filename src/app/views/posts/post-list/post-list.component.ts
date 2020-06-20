@@ -20,6 +20,7 @@ export class PostListComponent implements OnInit {
     this._ModelService.open(content);
   }
 
+  //Get Posts
   getAll() {
     this._PostsService.getAll().subscribe((res) => {
       this.posts = res;
@@ -27,7 +28,7 @@ export class PostListComponent implements OnInit {
     });
   }
 
-  //Delete Item
+  //Delete Post
   deletePost(model, id) {
     this._ModelService.open(model).result.then(
       (result) => {

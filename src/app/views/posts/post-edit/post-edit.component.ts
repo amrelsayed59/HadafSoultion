@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { PostsService } from "src/app/core/services/posts.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { ToastrService } from 'ngx-toastr';
-import {itemDetails} from './index'
 @Component({
   selector: "app-post-edit",
   templateUrl: "./post-edit.component.html",
@@ -16,14 +15,13 @@ export class PostEditComponent implements OnInit {
     description: "",
   };
 
-
   constructor(
     private _Router: Router,
     private _PostsService: PostsService,
-    private _Route: ActivatedRoute,
+    private _ActivatedRoute: ActivatedRoute,
     private _Toaster: ToastrService
   ) {
-   
+      
   }
 
   //FormGroup
@@ -59,7 +57,7 @@ export class PostEditComponent implements OnInit {
 
   }
 
-  // to access inputs (HandleValidations)
+  // To access inputs (HandleValidations)
   get f() {
     return this.postUpdateForm.controls;
   }
@@ -67,6 +65,7 @@ export class PostEditComponent implements OnInit {
   //get selected post
   editPost(id) {
     this._PostsService.showPost(id).subscribe((res) => {
+
       //select post
       this.itemDetails = res;
 
@@ -84,7 +83,7 @@ export class PostEditComponent implements OnInit {
 
   ngOnInit(): void {
     //Get Data by id
-    this._Route.params.subscribe((params) => {
+    this._ActivatedRoute.params.subscribe((params) => {
       this.editPost(params.id);
     });
    
