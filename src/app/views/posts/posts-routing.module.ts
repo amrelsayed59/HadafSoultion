@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostShowComponent } from './post-show/post-show.component';
+import { PostEditComponent } from './post-edit/post-edit.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: "show/:id",
     component: PostShowComponent
+  },
+  {
+    path: "edit/:id",
+    component: PostEditComponent
   },
  
 ];

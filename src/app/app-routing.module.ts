@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './shared/components/layouts/admin-layout/admin-layout.component';
+import { NotfoundComponent } from './shared/components/notfound/notfound.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
       }
     ]
   },
- 
+  
+  { path: "**", component: NotfoundComponent },
 ];
 
 @NgModule({

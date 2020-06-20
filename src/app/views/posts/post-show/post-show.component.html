@@ -1,1 +1,67 @@
-<p>post-show works!</p>
+<div class="card card-info my-3">
+    <div class="card-header position-relative">
+      <h3 class="card-title">Show Post Details</h3>
+      <div class="ribbon-wrapper">
+        <div class="ribbon bg-primary">
+          <span>#{{itemDetails.id}}</span>
+        </div>
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <div class="form-horizontal">
+      <div class="card-body">
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label h5">Title</label>
+          <div class="col-sm-10">
+           <p class="col-form-label">{{itemDetails.title}}</p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label h5">Description</label>
+          <div class="col-sm-10">
+            <p>{{itemDetails.description}}</p>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-sm-2 col-sm-10">
+           
+          </div>
+        </div>
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button type="button" class="btn btn-info mx-1" [routerLink]="['../../edit', itemDetails.id]">Edit</button>
+        <button type="button" class="btn btn-danger mx-1" (click)="deletePost(deleteModel, itemDetails.id)">Delete</button>
+        
+        <button type="submit" class="btn btn-primary float-right" routerLink="/admin/posts">
+            <i class="fas fa-backward"></i>
+            Back 
+        </button>
+      </div>    
+      <!-- /.card-footer -->
+    </div>
+  </div>
+
+  
+
+  <ng-template #deleteModel let-modal let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-title">Item Deletion</h4>
+      <button type="button" class="close" aria-describedy="modal-title" (click)="d('Close click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Are you sure you wand to delete <span class="text-primary">this item</span>?</strong></p>
+      <p>
+        All information associated to this item will be permanently deleted
+        <span class="text-danger">This operation can not be undone.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="d('cancel click')">Cancel</button>
+      <button type="button" class="btn btn-danger" (click)="c('Ok click')">Ok</button>
+    </div>
+  </ng-template>
+  

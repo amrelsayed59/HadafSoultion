@@ -1,1 +1,52 @@
-<p>post-edit works!</p>
+
+<div class="card card-info my-3">
+    <div class="card-header">
+      <h3 class="card-title">Update</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form class="form-horizontal" [formGroup]='postUpdateForm' (ngSubmit)='updatePost(itemDetails.id)'>
+        <div class="card-body">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label h5">Title</label>
+            <div class="col-sm-10">
+                <input formControlName="title" type="text" class="form-control" [(ngModel)]="itemDetails.title"/>
+                <!-- Validation -->
+                <div *ngIf="f.title.errors !=null && f.title.touched" class="">
+                    <p class="text-danger">Title is not valid</p>
+                </div>
+                <!-- Validation -->
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label h5">Description</label>
+            <div class="col-sm-10">
+                <input formControlName="description" type="text" class="form-control" [(ngModel)]="itemDetails.description"/>
+                <!-- Validation --> 
+                <div *ngIf="f.description.errors !=null && f.description.touched" class="">
+                    <p class="text-danger">Description is not valid</p>
+                </div>
+                <!-- Validation -->
+            </div>
+          </div>
+          
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          <button 
+            type="submit" 
+            class="btn btn-info mx-1" 
+            [disabled]='this.postUpdateForm.invalid'>
+                Update
+            </button>
+          
+          <button type="submit" class="btn btn-danger float-right" routerLink="/admin/posts">
+              Cancle 
+          </button>
+        </div>    
+        <!-- /.card-footer -->
+      </form>
+  </div>
+
+
+

@@ -12,7 +12,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
   constructor() {}
 
-  //Handling for Sending your Header
+  //Handling for Sending your token in Header
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request);

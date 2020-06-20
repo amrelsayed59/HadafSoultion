@@ -20,4 +20,17 @@ export class PostsService {
     return this._HttpClient.get(`${env.apiUrl}/posts`)  //.pipe(catchError(this._handleErrors.logError))  //Handling Error
   }
 
+  showPost(id): Observable<any> {
+    return this._HttpClient.get(`${env.apiUrl}/posts/${id}`)
+  }
+
+  updatePost(data, id): Observable<any> {
+    return this._HttpClient.put(`${env.apiUrl}/posts/${id}`, data)
+  }
+
+
+  deletePost(id): Observable<any> {
+    return this._HttpClient.delete(`${env.apiUrl}/posts/${id}`)
+  }
+
 }

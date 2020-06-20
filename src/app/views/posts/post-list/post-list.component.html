@@ -1,11 +1,6 @@
 <div class="row">
-    <div class="col-md-6">
-      <h2>List Of Posts</h2>
-    </div>
-    <div class="col-md-6 text-right mt-3">
-      <a href="javascript:;"  class="btn btn-primary">
-        <i class="fa fa-plus fa-lg"></i>
-      </a>
+    <div class="col-md-12">
+      <h4 class="py-1">List of posts</h4>
     </div>
   </div>
   
@@ -24,17 +19,17 @@
       </thead>
       <tbody>
         <tr *ngFor="let post of posts; let i = index">
-            <td>{{i+1}}</td>
+            <td>{{post.id}}</td>
             <td>{{post.title}}</td>
-            <td>{{ (post.body.length > 50) ? (post.body | slice:0:50) + '...' : post.body}}</td>
+            <td>{{ (post.description.length > 50) ? (post.description | slice:0:50) + '...' : post.description}}</td>
             <td style="width: 150px;">
               <a href="javascript:;" class="btn btn-default text-primary" [routerLink]="['show', post.id]">
                 <i class="fa fa-eye"></i>
               </a>
-              <a href="#" class="btn btn-default text-success">
+              <a href="#" class="btn btn-default text-success" [routerLink]="['edit', post.id]">
                 <i class="fa fa-edit"></i>
               </a>
-              <a href="javascript:;" class="btn btn-default text-danger">
+              <a href="javascript:;" class="btn btn-default text-danger" (click)="deletePost(deleteModel, post.id)">
                 <i class="fa fa-trash"></i>
               </a>
             </td>
@@ -42,3 +37,24 @@
       </tbody>
     </table>
   </div>
+
+
+  <ng-template #deleteModel let-modal let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-title">Item Deletion</h4>
+      <button type="button" class="close" aria-describedy="modal-title" (click)="d('Close click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Are you sure you wand to delete <span class="text-primary">this item</span>?</strong></p>
+      <p>
+        All information associated to this item will be permanently deleted
+        <span class="text-danger">This operation can not be undone.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="d('cancel click')">Cancel</button>
+      <button type="button" class="btn btn-danger" (click)="c('Ok click')">Ok</button>
+    </div>
+  </ng-template>

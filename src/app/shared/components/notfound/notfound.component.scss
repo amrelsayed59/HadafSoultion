@@ -1,0 +1,22 @@
+.img-box {
+    background-color: #f7f7f7;
+    height: 100vh;
+    img {
+        height: 500px;
+        width: 100%;
+        object-fit: contain;
+        margin: 2rem 0;
+    }
+}
+
+.back-home {
+    display: flex;
+    justify-content: center;
+    a{
+        padding: .5rem 2rem;
+        background: #d64c00;
+        color: #f7f7f7;
+        border-radius: 5px;
+        margin: 1rem 0;
+    }
+}
