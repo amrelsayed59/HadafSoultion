@@ -22,7 +22,9 @@ export class PostEditComponent implements OnInit {
     private _PostsService: PostsService,
     private _Route: ActivatedRoute,
     private _Toaster: ToastrService
-  ) {}
+  ) {
+   
+  }
 
   //FormGroup
   postUpdateForm = new FormGroup({
@@ -65,15 +67,26 @@ export class PostEditComponent implements OnInit {
   //get selected post
   editPost(id) {
     this._PostsService.showPost(id).subscribe((res) => {
+      //select post
       this.itemDetails = res;
+
+      //patchValues To FormControl
+      this.postUpdateForm.patchValue({
+        title: this.itemDetails.title,
+        description: this.itemDetails.description
+      })
+
       console.log((this.itemDetails = res));
     });
   }
 
+
+
   ngOnInit(): void {
-    //Get Item Data id
+    //Get Data by id
     this._Route.params.subscribe((params) => {
       this.editPost(params.id);
     });
+   
   }
 }

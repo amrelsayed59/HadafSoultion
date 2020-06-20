@@ -10,7 +10,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label h5">Title</label>
             <div class="col-sm-10">
-                <input formControlName="title" type="text" class="form-control" [(ngModel)]="itemDetails.title"/>
+                <input formControlName="title" type="text" class="form-control"/>
                 <!-- Validation -->
                 <div *ngIf="f.title.errors !=null && f.title.touched" class="">
                     <p class="text-danger">Title is not valid</p>
@@ -21,7 +21,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label h5">Description</label>
             <div class="col-sm-10">
-                <input formControlName="description" type="text" class="form-control" [(ngModel)]="itemDetails.description"/>
+                <input formControlName="description" type="text" class="form-control" />
                 <!-- Validation --> 
                 <div *ngIf="f.description.errors !=null && f.description.touched" class="">
                     <p class="text-danger">Description is not valid</p>
@@ -40,7 +40,7 @@
                 Update
             </button>
           
-          <button type="submit" class="btn btn-danger float-right" routerLink="/admin/posts">
+          <button type="button" class="btn btn-danger float-right" routerLink="/admin/posts">
               Cancle 
           </button>
         </div>    

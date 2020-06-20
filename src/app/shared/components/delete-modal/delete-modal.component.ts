@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-delete-modal',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delete-modal.component.scss']
 })
 export class DeleteModalComponent implements OnInit {
+
+@Input() deleteModel: any;
 
   constructor() { }
 
