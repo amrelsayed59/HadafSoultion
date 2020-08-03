@@ -1,0 +1,80 @@
+{
+  "hello": "Welcome Man",
+  "companyname": "Test website",
+  "language": "Language",
+  "name": "Name",
+  "generalMessage": {
+    "internetConnectionError": "Please check your internet connection and tray again",
+    "internetConnectionSuccess": "you are connected to internet"
+  },
+  "config": {},
+  "validation": {
+    "required": "the {{value}} field is required",
+    "notNumber": "the {{value}} must be a number",
+    "maxlength": "maxlength faild",
+    "notArabic": "this field must have arabic data only"
+  },
+  "statuscode": {
+    "200": "The request has succeeded",
+    "201": "resource created succefuly",
+    "400": "bad request please try again",
+    "401": "please add the auth key or login",
+    "402": "bad request please try again",
+    "403": "please authorize the request",
+    "404": "sorry: Request Not found",
+    "unknownerror": "unknown error please contact with technical support"
+  },
+  "url-translate": {
+    "home": "home",
+    "teststyle": "test",
+    "testprint": "print",
+    "aboutus": "aboutus",
+    "fullmenu": "fill menu",
+    "moreabout": "More Info",
+    "observable": "Realtime Data",
+    "grid": "Grid CSS3",
+    "sliders": "Slider",
+    "materialtest": "Material Test",
+    "aboutemp": "About Emp"
+  },
+  "navbar": {
+    "home": "Home",
+    "teststyle": "Test Style",
+    "testprint": "Test Print",
+    "aboutus": "Aboutus",
+    "fullmenu": "Full Menu",
+    "moreabout": "More Aboutus",
+    "aboutemp": "About Emp",
+    "observable": "Realtime Data",
+    "profile": "Profile",
+    "grid": "Grid CSS3",
+    "sliders": "Slider",
+    "materialtest": "Material Test"
+  },
+  "table-header": {
+    "empId": "Emp ID",
+    "name": "Name",
+    "salary": "Salary",
+    "symbol": "Symbol",
+    "actions": "Actions",
+    "image": "Image"
+  },
+
+  "titles": {
+    "SELECTLANG": "اختار اللغة",
+    "HOME": "الصفحة الرئيسية",
+    "LOGIN": "تسجيل الدخول",
+    "LOGOUT": ":تسجيل الخروج"
+  },
+  "toolbar": {
+    "dashboard": "لوحة القيادة",
+    "posts": "المشاركات",
+    "users": "المستخدمون"
+  },
+  "listposts": {
+    "listofposts": "قائمة بهذه الوظائف",
+    "posts": "المشاركات",
+    "description": "الوصف",
+    "actions": "أجراءات"
+}
+}

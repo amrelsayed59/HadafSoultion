@@ -17,6 +17,7 @@ export class HandleErrorService {
     } else {
       //ServerSide
       console.log('Server Side Error', error)
+      alert('Server Side Error')
     }
     return throwError('There is something went wrong')
   }

@@ -2,15 +2,25 @@
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="../admin">
         <div class="main-logo">
             <div class="img-box">
-                <img class="img-fluid" src="https://www.hadafsolutions.net/images/2016/12/logo_header.png" alt="Logo" />
+                <img class="img-fluid" src="./assets/Images/user-dummy-pic.png" alt="Logo" />
             </div>
-            <span> Hadaf Solution</span>
+            <span> Solution</span>
         </div>
     </a>
     <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
+    <ul class="navbar-nav px-3 flex-row">
+       
+        <li class="nav-item text-nowrap px-2">
+           <button type="button" (click)="changeCurrentLang('en')" class="btn btn-primary">English</button>
+        </li>
+        <li class="nav-item text-nowrap px-2">
+            <button type="button" (click)="changeCurrentLang('ar')" class="btn btn-primary">Arabic</button>
+        </li>
+        <li class="nav-item text-nowrap px-2">
+            <a class="nav-link" href="#">{{"titles.LOGOUT" | translate}}</a>
+        </li>
+        <li class="nav-item text-nowrap px-2">
+            <a class="nav-link" href="#">{{"titles.HOME" | translate}}</a>
         </li>
     </ul>
 </nav>
@@ -23,19 +33,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <span data-feather="home"></span>
-                            Example <span class="sr-only">(current)</span>
+                            {{"toolbar.dashboard" | translate}} <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" routerLink="posts">
                             <span data-feather="file"></span>
-                            Posts
+                            {{"toolbar.posts" | translate}}
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <span data-feather="bar-chart-2"></span>
-                            Example
+                            {{"toolbar.users" | translate}}
                         </a>
                     </li>
                 </ul>

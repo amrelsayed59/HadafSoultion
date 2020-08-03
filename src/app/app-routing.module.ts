@@ -12,17 +12,18 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  {
-    path: "",
-    component: AdminLayoutComponent,
-    children: [
-      {
-        path: "posts",
-        loadChildren: () =>
-          import("./views/posts/posts.module").then(m => m.PostsModule)
-      }
-    ]
-  },
+  // {
+  //   path: "",
+  //   component: AdminLayoutComponent,
+  //   children: [
+  //     {
+  //       path: "posts",
+  //       loadChildren: () =>
+  //         import("./views/posts/posts.module").then(m => m.PostsModule)
+  //     }
+  //   ]
+  // },
+
   {
     path: 'admin',
     component: AdminLayoutComponent,
@@ -31,6 +32,7 @@ const routes: Routes = [
         path: "posts",
         loadChildren: () => import('./views/posts/posts.module').then(m => m.PostsModule)
       }
+      
     ]
   },
   

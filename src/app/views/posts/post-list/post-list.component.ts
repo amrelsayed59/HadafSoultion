@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { PostsService } from "src/app/core/services/posts.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ToastrService } from "ngx-toastr";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-post-list",
@@ -9,12 +10,17 @@ import { ToastrService } from "ngx-toastr";
   styleUrls: ["./post-list.component.scss"],
 })
 export class PostListComponent implements OnInit {
+  currentLang: string;
   posts: any = [];
   constructor(
     private _PostsService: PostsService,
     private _Toaster: ToastrService,
-    private _ModelService: NgbModal
-  ) {}
+    private _ModelService: NgbModal,
+    private translate: TranslateService
+  ) {
+    this.currentLang = localStorage.getItem("currentLang") || "en";
+    this.translate.use(this.currentLang);
+  }
 
   open(content) {
     this._ModelService.open(content);
@@ -61,4 +67,6 @@ export class PostListComponent implements OnInit {
   ngOnInit(): void {
     this.getAll();
   }
+
+
 }
