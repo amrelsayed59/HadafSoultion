@@ -1,0 +1,25 @@
+<section class="users-section">
+
+    <div>
+        <a type="button" class="btn btn-primary" routerLink='add-user'>Add New Task
+        </a>
+    </div>
+
+    <div *ngIf="tasksSer.tasks.length == 0">
+        <p class="alert alert-primary">
+            There is no Tasks
+        </p>
+    </div>
+
+    <div *ngIf="tasksSer.tasks.length != 0">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let task of tasksSer.tasks; index as i">
+                <a [routerLink]="['edit-user', i+1]">
+                    {{task.title}}
+                </a>
+                <button class="btn btn-danger" (click)="deleteTask(i)">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+</section>
