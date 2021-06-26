@@ -6,11 +6,14 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient } from '@angular/common/http';
+import { UserLayoutComponent } from './user-layout/user-layout.component';
+import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
+import { BlankLayoutComponent } from './blank-layout/blank-layout.component';
 
 
 
 @NgModule({
-  declarations: [AdminLayoutComponent],
+  declarations: [AdminLayoutComponent, UserLayoutComponent, AuthLayoutComponent, BlankLayoutComponent],
   imports: [
     CommonModule,
     RouterModule,

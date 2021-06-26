@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "hadafSolution": {
@@ -129,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hadafSolution"
+    }
+  },
+  "defaultProject": "hadafSolution",
+  "cli": {
+    "analytics": "3a59cdd3-3e90-49e4-9a32-fe5512790752"
+  }
 }
