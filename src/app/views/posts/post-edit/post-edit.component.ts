@@ -8,8 +8,15 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: "./post-edit.component.html",
   styleUrls: ["./post-edit.component.scss"],
 })
+
+
+
+
 export class PostEditComponent implements OnInit {
-  itemDetails: any = {
+
+
+
+  itemDetails: ItemDetails = {
     id: "",
     title: "",
     description: "",
@@ -21,14 +28,14 @@ export class PostEditComponent implements OnInit {
     private _ActivatedRoute: ActivatedRoute,
     private _Toaster: ToastrService
   ) {
-      
+
   }
 
   //FormGroup
   postUpdateForm = new FormGroup({
     title: new FormControl(null, [Validators.required]),
     description: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
-  }); 
+  });
 
   //SubmitedMethod
   updatePost(id) {
@@ -36,15 +43,15 @@ export class PostEditComponent implements OnInit {
     let data = this.postUpdateForm.value;
 
     this._PostsService.updatePost(data, id).subscribe(res => {
-        this._Toaster.success("Item Updated Successfuly", "Success", {
-          timeOut: 1500,
-          closeButton: true,
-          progressBar: true
-        });
-        setTimeout(() => {
-          this._Router.navigate(["admin/posts"]);
-        }, 1500)
-      },
+      this._Toaster.success("Item Updated Successfuly", "Success", {
+        timeOut: 1500,
+        closeButton: true,
+        progressBar: true
+      });
+      setTimeout(() => {
+        this._Router.navigate(["admin/posts"]);
+      }, 1500)
+    },
       err => {
         this._Toaster.error(err.statusText, "Error", {
           timeOut: 1500,
@@ -86,6 +93,12 @@ export class PostEditComponent implements OnInit {
     this._ActivatedRoute.params.subscribe((params) => {
       this.editPost(params.id);
     });
-   
+
   }
+}
+
+export interface ItemDetails {
+  id: string;
+  title: string;
+  description: string;
 }
