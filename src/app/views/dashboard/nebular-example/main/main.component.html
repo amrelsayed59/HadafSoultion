@@ -1,0 +1,28 @@
+
+<hr/>
+    <input type="text" class="form-control" (keyup)="inputTwo.emit($event.target.value)" [value]="inputOne"/>
+    <p>===> {{inputOne}}</p>
+<hr/>
+
+<p>main works! {{x}} </p>
+
+<div *ngFor="let arr of myArray" class="d-flex">
+    <ul class="list-unstyled px-2">
+        <li>Name</li>
+        <li>Position</li>
+        <li>Salary</li>
+    </ul>
+    <ul class="list-unstyled px-2">
+        <li>{{arr.name}}</li>
+        <li>{{arr.position}}</li>
+        <li>{{arr.salary}}</li>
+       
+    </ul>
+
+</div>
+<div *ngIf="myArray.length === 0">No data</div>
+
+<button (click)="pushEvent()">Click Me</button>
+
+<hr/>
+

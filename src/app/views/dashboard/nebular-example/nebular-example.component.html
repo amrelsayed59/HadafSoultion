@@ -1,0 +1,18 @@
+<section class="p-1 my-3">
+    Nebular Example
+    <input type="text" (keyup)="itemTitleInParent = $event.target.value"/>
+
+    <hr>
+    <input type="text" class="form-control" (keyup)="inputOne = $event.target.value" [value]="inputOne"/>
+    <hr>
+    <app-main 
+        [itemTitleInChild]="itemTitleInParent" 
+        [myArray]="myArray" 
+        #myChild
+        (eventNameFromChild)="dataFromChild = $event"
+
+        [(inputOne)]="inputOne"
+        >
+    </app-main>
+    {{dataFromChild}}
+</section>

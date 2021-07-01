@@ -27,6 +27,11 @@ const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       {
+        path: "dashboard",
+        loadChildren: () =>
+        import("./views/dashboard/dashboard.module").then((m) => m.DashboardModule),
+      },
+      {
         path: "posts",
         loadChildren: () =>
           import("./views/posts/posts.module").then((m) => m.PostsModule),
